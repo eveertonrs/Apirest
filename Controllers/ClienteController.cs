@@ -1,8 +1,6 @@
 using APIClienteWEB.Models;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.IO.MemoryMappedFiles;
 
 
 namespace APIClienteWEB.Controllers
@@ -21,7 +19,7 @@ namespace APIClienteWEB.Controllers
         }
 
         [HttpGet("listar")]
-        public List<Cliente> GetPessoa(string? cpf = null, string? nome = null)
+        public List<Cliente> GetClientes(string? cpf = null, string? nome = null)
         {
             List<Cliente> lista = LerArquivoJson();
             var listaporfiltro = lista.AsQueryable();
@@ -38,17 +36,23 @@ namespace APIClienteWEB.Controllers
 
             return listaporfiltro.ToList();
         }
+
         [HttpPost]
         [Route("criar")]
-        public IActionResult AddPessoa([FromBody] Cliente novaPessoa)
+        public IActionResult AddCliente([FromBody] Cliente novaPessoa)
         {
             List<Cliente> pessoas = LerArquivoJson();
+            if (pessoas == null)
+            {
+                pessoas = new List<Cliente>();
+            }
             pessoas.Add(novaPessoa);
             SalvarArquivoJson(pessoas);
-            return CreatedAtAction(nameof(GetPessoa), new { id = novaPessoa.Id }, novaPessoa);
+            return CreatedAtAction(nameof(GetClientes), new { id = novaPessoa.Id }, novaPessoa);
         }
+
         [HttpPut("atualizar/{id}")]
-        public IActionResult UpdatePessoa(int id, [FromBody] Cliente clienteAtualizada)
+        public IActionResult UpdateCliente(int id, [FromBody] Cliente clienteAtualizada)
         {
             List<Cliente> clientes = LerArquivoJson();
             Cliente cliente = clientes.FirstOrDefault(p => p.Id == id);
@@ -68,6 +72,7 @@ namespace APIClienteWEB.Controllers
 
             return NoContent();
         }
+
         [HttpDelete("remover/{id}")]
         public IActionResult DeletePessoa(int id)
         {

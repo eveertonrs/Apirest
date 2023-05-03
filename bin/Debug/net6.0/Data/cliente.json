@@ -1,1 +1,23 @@
-[{"Id":1,"Nome":"Marcos","Contato":{"Email":"gmail","DDD":"19","Telefone":"1999423381"},"CPF":"4565528287","RG":"507546797","Endereco":{"CEP":"13803010","Logradouro":"Teste","Numero":"19494","Bairro":"pq real","Complemento":"casa","Cidade":"Mogi Mirim","Estado":"SP","Referencia":"casa"}},{"Id":4,"Nome":"teste 2","Contato":{"Email":"gmail","DDD":"19","Telefone":"1999423381"},"CPF":"123","RG":"507546797","Endereco":{"CEP":"13803010","Logradouro":"Teste","Numero":"19494","Bairro":"pq real","Complemento":"casa","Cidade":"mogi asdsads","Estado":"SP","Referencia":"casa"}},{"Id":6,"Nome":"Marcelo","Contato":{"Email":"gmail","DDD":"19","Telefone":"1999423381"},"CPF":"123","RG":"507546797","Endereco":{"CEP":"13803010","Logradouro":"Teste","Numero":"19494","Bairro":"pq real","Complemento":"casa","Cidade":"mogi asdsads","Estado":"SP","Referencia":"casa"}}]
+[
+  {
+    "Id": 1,
+    "Nome": "Marcos",
+    "Contato": {
+      "Email": "gmail",
+      "DDD": "19",
+      "Telefone": "1999423381"
+    },
+    "CPF": "4565528287",
+    "RG": "507546797",
+    "Endereco": {
+      "CEP": "13803010",
+      "Logradouro": "Teste",
+      "Numero": "19494",
+      "Bairro": "pq real",
+      "Complemento": "casa",
+      "Cidade": "Mogi Mirim",
+      "Estado": "SP",
+      "Referencia": "casa"
+    }
+  }
+]
